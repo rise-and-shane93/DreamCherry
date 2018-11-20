@@ -1,0 +1,141 @@
+/* The following colors
+will be used for the site:
+- Navy Blue #191970
+- Linen #E9E9E9
+- Plaster #CDCDCD
+- Fresh Water #88BBD6
+*/
+
+/* universal selectors */
+* {
+    box-sizing: border-box;
+}
+
+/* BEGIN SMALL SCREEN QUERY */
+
+/*===============
+CODE COMMON TO ALL PAGES
+===============*/
+
+/*-------
+Text and fonts
+-------*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p, a, li, button, input {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*-------
+Navbar
+-------*/
+.logo-image {
+    width: 50px;
+}
+.navbar {
+    background-color: #191970;
+}
+
+/*-------
+#Social-Media
+-------*/
+#social-media a:hover {
+    text-decoration: none;
+}
+#social-media .fa {
+    width: 50px;
+    height: 50px;
+    font-size: 27px;
+    color: white;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+    margin: 0 2px;
+}
+.fa-facebook {
+    padding: 13px 17px;
+    background-color: #3b5998;
+}
+.fa-linkedin {
+    padding: 11px 13px;
+    background-color: #007bb5;
+}
+.fa-medium {
+    padding: 12px 11px;
+    background-color: #02b875;
+}
+
+/*-------
+Footer
+-------*/
+footer {
+    color: #E9E9E9;
+    height: 110px;
+    background-color: #191970;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer h4 {
+    margin-bottom: 0;
+}
+/*===============
+FEATURED ARTICLE PAGE
+===============*/
+
+
+
+
+/* END SMALL SCREEN QUERY */
+
+/* ---------------------- */
+
+/* BEGIN MEDIUM SCREEN QUERY */
+
+@media (min-width: 768px) {
+    /*===============
+    CODE COMMON TO ALL PAGES
+    ===============*/
+    .home-card {
+        height: 249px;
+    }
+    .wrap {
+        min-height: calc(100vh - 110px);
+    }
+}
+
+/* END MEDIUM SCREEN QUERY*/
+
+/* ---------------------- */
+
+/* BEGIN LARGE SCREEN QUERY */
+
+@media (min-width: 1024px) {
+    /*===============
+    CODE COMMON TO ALL PAGES
+    ===============*/
+    .wrap {
+        min-height: calc(100vh - 110px);
+    }
+
+    /*-------
+    Footer
+    -------*/
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+    /*-------
+    Navbar
+    -------*/
+    .logo-image {
+        width: 200px;
+    }
+}
+
+/* END LARGE SCREEN QUERY*/
