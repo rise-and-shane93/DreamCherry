@@ -1,9 +1,9 @@
 /* The following colors
 will be used for the site:
-- Navy Blue #191970
-- Linen #E9E9E9
-- Plaster #CDCDCD
-- Fresh Water #88BBD6
+- Navy Blue #191970 rgb(25,25,112)
+- Linen #E9E9E9 rgb(233,233,233)
+- Plaster #CDCDCD rgb(205,205,205)
+- Fresh Water #88BBD6 rgb(136,187,214)
 */
 
 /* universal selectors */
@@ -51,25 +51,65 @@ Navbar
     font-size: 27px;
     color: white;
     border-radius: 50%;
-    transition: .2s ease-in-out;
+    transition: .2s all ease-in-out;
     margin: 0 2px;
 }
 .fa-facebook {
     padding: 13px 17px;
     background-color: #3b5998;
 }
+.fa-facebook:hover {
+    background-color: #0D4F8B;
+}
 .fa-linkedin {
     padding: 11px 13px;
     background-color: #007bb5;
+}
+.fa-linkedin:hover {
+    background-color: #2B4F81;
 }
 .fa-medium {
     padding: 12px 11px;
     background-color: #02b875;
 }
+.fa-medium:hover {
+    background-color: #228B22;
+}
+
+/*-------
+Up arrow for smooth scrolling 
+-------*/
+.up-arrow {
+    background-color: rgba(25,25,112,0.5);
+    color: white;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 120px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.up-arrow i {
+    margin-bottom: 5px;
+    font-size: 45px;
+}
+.up-arrow:hover {
+    background-color: rgb(25,25,112);
+    color: #E9E9E9;
+    box-shadow: 0px 5px 15px 0px #373737;
+    transition: .2s ease-in-out;
+}
 
 /*-------
 Footer
 -------*/
+
 footer {
     color: #E9E9E9;
     height: 110px;
@@ -82,13 +122,88 @@ footer {
 footer h4 {
     margin-bottom: 0;
 }
+
 /*===============
 FEATURED ARTICLE PAGE
 ===============*/
 
+.header-photos img:first-child {
+    width: 75px;
+    height: 100px;
+}
+.header-photos img:nth-child(2) {
+    width: 150px;
+    height: 100px;
+}
 
+/*-------
+Section side-menu
+-------*/
 
+#side-menu {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    height: 340px;
+}
 
+.menu-collapse {
+    height: 100%;
+    border-left: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.menu-collapse button {
+    background-color: rgba(136,187,214,0.5);
+}
+
+.menu-collapse button i {
+    color: #191970;
+}
+
+.font-sizes button {
+    margin: 5px;
+}
+
+/*-------
+Article side-menu-inner
+-------*/
+
+#side-menu-inner {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, 
+    #88BBD6 25%, #E9E9E9);
+    /* padding: 1rem; */
+}
+
+.newsletter-menu, .font-selection {
+    padding: 1rem;
+}
+
+.newsletter-menu {
+    border-bottom: 1px solid #373737;
+    border-top: 1px solid black;
+}
+
+.font-selection {
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.section-list {
+    padding-left: 0;
+    list-style-type: none;
+}
+.section-list li {
+    margin-bottom: 0.25rem;
+}
 /* END SMALL SCREEN QUERY */
 
 /* ---------------------- */
@@ -129,13 +244,88 @@ FEATURED ARTICLE PAGE
         justify-content: space-around;
     }
 
-
     /*-------
     Navbar
     -------*/
     .logo-image {
         width: 200px;
     }
+    .navbar-nav .nav-link:hover::before {
+        width: 100%;
+    }
+    .navbar-nav .active {
+        font-weight: 900;
+    }
+    .navbar-nav .nav-link::before {
+        content: '';
+        display: block;
+        width: 0%;
+        top: -15px;
+        left: 0;
+        height: 7px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #E9E9E9;
+        position: relative;
+        transition: all ease-in-out 250ms;
+    }
+    .navbar-nav .active::before {
+        content: '';
+        display: block;
+        width: 100%;
+        top: -15px;
+        border-radius: 0px;
+        left: 0;
+        height: 7px;
+        background-color: #88BBD6;
+        position: relative;
+    }
+
+    /*===============
+    FEATURED ARTICLE PAGE
+    ===============*/
+    #newsletter {
+        background-color: #E9E9E9;
+        box-shadow: 0 0 30px 5px #A2A2A2;
+        padding: 2rem;
+        width: 900px;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+    }
+
+    #newsletterWrapper {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    /*-------
+    Section side-menu
+    -------*/
+
+    #side-menu {
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+    }
+
+    .newsletter-menu {
+        border-top: none;
+    }
+    
+    .font-selection {
+        border-bottom: none;
+    }
+
+    .menu-collapse {
+        border-left: 1px dashed #373737;
+        background-color: rgba(25,25,112,0.5);
+    }    
+    
+
 }
 
 /* END LARGE SCREEN QUERY*/
